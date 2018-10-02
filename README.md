@@ -2,6 +2,8 @@
 
 A Datacash plugin to build Moneybutton
 
+![code](./code.png)
+
 # Install
 
 Include 3 scripts, in the following order:
