@@ -1,6 +1,6 @@
 # Databutton
 
-A Datacash plugin to build Moneybutton
+A [Datacash](https://github.com/unwriter/datacash) plugin to build Moneybutton
 
 ![code](./code.png)
 
