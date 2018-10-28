@@ -41,6 +41,8 @@ databutton.build({
 
 # Advanced
 
+## 1. Send Moneybutton attributes
+
 You can pass additional Moneybutton parameters to databutton's `button` object:
 
 ```
@@ -54,6 +56,30 @@ databutton.build({
     currency: "USD",
     onPayment: function(msg) {
       console.log(msg)
+    }
+  }
+})
+```
+
+## 2. Add money transfer options
+
+You can also specify additional `cash` attribute to send money. This is possible through the `$cash` attribute.
+
+
+Currently `$cash` only has only one attribute: `to`, which is equivalent to datacash's ["cash.to" attribute usage](https://github.com/unwriter/datacash#4-to).
+
+Here's an example:
+
+```
+databutton.build({
+  data: ["0x6d0c", "topic", "hello world"],
+  button: {
+    $el: "#button",
+    $cash: {
+      to: [{
+        address: "qq4kp3w3yhhvy4gm4jgeza4vus8vpxgrwc90n8rhxe",
+        value: 100000
+      }]
     }
   }
 })
