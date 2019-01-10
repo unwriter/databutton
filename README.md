@@ -1,6 +1,6 @@
 # Databutton
 
-A [Datacash](https://github.com/unwriter/datacash) plugin to build Moneybutton
+A [Datapay](https://github.com/unwriter/datapay) plugin to build Moneybutton
 
 ![code](./code.png)
 
@@ -10,13 +10,13 @@ Include 3 scripts, in the following order:
 
 ```
 <script src="https://api.moneybutton.com/moneybutton.js"></script>
-<script src='https://unpkg.com/datacash'></script>
+<script src='https://unpkg.com/datapay'></script>
 <script src='https://unpkg.com/databutton'></script>
 ```
 
 # Usage
 
-Similar to [datacash](https://github.com/unwriter/datacash) syntax, except that the `cash` part is replaced with `button`.
+Similar to [datapay](https://github.com/unwriter/datapay) syntax, except that the `pay` part is replaced with `button`.
 
 ```
 databutton.build({
@@ -63,10 +63,10 @@ databutton.build({
 
 ## 2. Add money transfer options
 
-You can also specify additional `cash` attribute to send money. This is possible through the `$cash` attribute.
+You can also specify additional `pay` attribute to send money. This is possible through the `$pay` attribute.
 
 
-Currently `$cash` only has only one attribute: `to`, which is equivalent to datacash's ["cash.to" attribute usage](https://github.com/unwriter/datacash#4-to).
+Currently `$pay` only has only one attribute: `to`, which is equivalent to datapay's ["pay.to" attribute usage](https://github.com/unwriter/datapay#4-to).
 
 Here's an example:
 
@@ -75,7 +75,7 @@ databutton.build({
   data: ["0x6d0c", "topic", "hello world"],
   button: {
     $el: "#button",
-    $cash: {
+    $pay: {
       to: [{
         address: "qq4kp3w3yhhvy4gm4jgeza4vus8vpxgrwc90n8rhxe",
         value: 100000
