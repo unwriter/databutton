@@ -6,12 +6,12 @@ var databutton = {
       var config = o.button;
       config.outputs = [{ script: s, amount: 0, currency: 'BSV' }];
       if (o.button && o.button.$pay && o.button.$pay.to) {
-        o.button.$cash.to.forEach(function(receiver) {
+        o.button.$pay.to.forEach(function(receiver) {
           config.outputs.push({ to: receiver.address, amount: receiver.value/100000000, currency: 'BSV' })
         })
       }
       delete config.$el;
-      delete config.$cash;
+      delete config.$pay;
       moneyButton.render(
         (el instanceof Element ? el : document.querySelector(el)),
         config
