@@ -9,7 +9,7 @@ A [Datapay](https://github.com/unwriter/datapay) plugin to build Moneybutton
 Include 3 scripts, in the following order:
 
 ```
-<script src="https://api.moneybutton.com/moneybutton.js"></script>
+<script src="https://www.moneybutton.com/moneybutton.js"></script>
 <script src='https://unpkg.com/datapay'></script>
 <script src='https://unpkg.com/databutton'></script>
 ```
