@@ -1,7 +1,7 @@
 {
   "name": "databutton",
   "version": "0.0.1",
-  "description": "A Datacash plugin to build Moneybutton",
+  "description": "A Datapay plugin to build Moneybutton",
   "main": "index.js",
   "unpkg": "./index.js",
   "author": "",
