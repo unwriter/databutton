@@ -2,6 +2,7 @@
 <head>
 <style>
 input#file { display: block; padding: 10px; background: whitesmoke; width: 100%; margin: 10px 0; }
+a#tx { display: block; padding: 10px; margin: 10px 0; color: red; font-size: 12px; font-family: Menlo, monaco, Courier; }
 </style>
 <script src="https://www.moneybutton.com/moneybutton.js"></script>
 <script src='https://unpkg.com/datapay'></script>
@@ -15,7 +16,11 @@ document.addEventListener("DOMContentLoaded", function(e) {
     },
     button: {
       $el: "#button",
-      onPayment: function(msg) { console.log(msg) },
+      onPayment: function(msg) {
+        console.log(msg)
+        document.querySelector("a#tx").innerHTML = "View on B (" + msg.txid + ")"
+        document.querySelector("a#tx").setAttribute("href", "https://b.bitdb.network#" + msg.txid)
+      },
       onError: function(err) { console.log(err) }
     }
   })
@@ -24,6 +29,7 @@ document.addEventListener("DOMContentLoaded", function(e) {
 </head>
 <body>
 <input type='file' id='file'>
+<a target='_blank' href='#' id='tx'></a>
 <div id='button'></div>
 </body>
 </html>
