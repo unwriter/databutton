@@ -16,6 +16,14 @@ Include 3 scripts, in the following order:
 
 # Usage
 
+You can use Datapay to upload the following types to the blockchain:
+
+1. ASCII String
+2. Hex String
+3. Binary
+
+## 1. ASCII & Hex String
+
 Similar to [datapay](https://github.com/unwriter/datapay) syntax, except that the `pay` part is replaced with `button`.
 
 ```
@@ -38,6 +46,64 @@ databutton.build({
   button: { $el: "#button" }
 })
 ```
+
+## 2. Binary & String
+
+You can upload not just string but also files in raw binary format. For this, we introduce a new attribute called `file`. We use this instead of `data`.
+
+The `file` attribute contains two child attributes:
+
+- `$el`: the selector for the `input[type=file]` element. Databutton will listen to a file selection event, and will create a moneybutton.
+- `data`: the same `data` attribute as ordinary datapay "data" payload, with a twist. You have access to 2 root level variables:
+  - `databutton.file`: The ArrayBuffer formatted file which you can directly feed into the blockchain.
+  - `databutton.type`: The file content type (`image/png`, `video/mp4`, etc.) as specified in https://www.iana.org/assignments/media-types/media-types.xhtml
+  - `databutton.name`: The file name
+  - `databutton.lastModified`: The lastModified attribute
+  - `databutton.lastModifiedDate`: The lastModifiedDate attribute
+  - `databutton.size`: The file size
+
+Here's an example databutton code for building a `B://` protocol upload:
+
+```
+databutton.build({
+  file: {
+    $el: document.querySelector("#file"),
+    data: [
+      "19HxigV4QyBv3tHpQVcUEQyq1pzZVdoAut",
+      databutton.file,
+      databutton.type,
+      "binary",
+      databutton.name
+    ]
+  },
+  button: {
+    $el: document.querySelector("#button")
+  }
+})
+```
+
+Or, you can simply use the selectors
+
+```
+databutton.build({
+  file: {
+    $el: "#file",
+    data: [
+      "19HxigV4QyBv3tHpQVcUEQyq1pzZVdoAut",
+      databutton.file,
+      databutton.type,
+      "binary",
+      databutton.name
+    ]
+  },
+  button: {
+    $el: "#button"
+  }
+})
+```
+
+
+
 
 # Advanced
 

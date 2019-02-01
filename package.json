@@ -1,6 +1,6 @@
 {
   "name": "databutton",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "A Datapay plugin to build Moneybutton",
   "main": "index.js",
   "unpkg": "./index.js",

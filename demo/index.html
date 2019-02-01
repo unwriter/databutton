@@ -1,0 +1,29 @@
+<html>
+<head>
+<style>
+input#file { display: block; padding: 10px; background: whitesmoke; width: 100%; margin: 10px 0; }
+</style>
+<script src="https://www.moneybutton.com/moneybutton.js"></script>
+<script src='https://unpkg.com/datapay'></script>
+<script src='https://unpkg.com/databutton'></script>
+<script>
+document.addEventListener("DOMContentLoaded", function(e) {
+  databutton.build({
+    file: {
+      $el: "#file",
+      data: ["19HxigV4QyBv3tHpQVcUEQyq1pzZVdoAut", databutton.file, databutton.type, 'binary', databutton.name],
+    },
+    button: {
+      $el: "#button",
+      onPayment: function(msg) { console.log(msg) },
+      onError: function(err) { console.log(err) }
+    }
+  })
+})
+</script>
+</head>
+<body>
+<input type='file' id='file'>
+<div id='button'></div>
+</body>
+</html>
